@@ -10,7 +10,7 @@ public class SummarizeMain {
 
     private static void summarizeOneThreadStatic() {
         long startTime = System.currentTimeMillis();
-        long counter = 0;
+        long counter;
         counter = doSumm(0, Integer.MAX_VALUE);
         long workingTime = System.currentTimeMillis() - startTime;
         System.out.println("One thread static worked " + workingTime + " millis and got " + counter);
@@ -18,11 +18,9 @@ public class SummarizeMain {
 
     private static void summarizeOneThread() throws InterruptedException {
         long startTime = System.currentTimeMillis();
-        long counter = 0;
+        long counter;
         Summator summator = new Summator(0, Integer.MAX_VALUE);
-        Thread th = new Thread(() -> {
-            summator.summarize();
-        });
+        Thread th = new Thread(summator::summarize);
         th.start();
         th.join();
         counter = summator.counter;
@@ -32,17 +30,13 @@ public class SummarizeMain {
 
     private static void summarizeTwoThreads() throws InterruptedException {
         long startTime = System.currentTimeMillis();
-        long counter = 0;
+        long counter;
 
         Summator summator1 = new Summator(0, Integer.MAX_VALUE / 2);
         Summator summator2 = new Summator(Integer.MAX_VALUE / 2 + 1, Integer.MAX_VALUE);
 
-        Thread th1 = new Thread(() -> {
-            summator1.summarize();
-        });
-        Thread th2 = new Thread(() -> {
-            summator2.summarize();
-        });
+        Thread th1 = new Thread(summator1::summarize);
+        Thread th2 = new Thread(summator2::summarize);
         th1.start();
         th2.start();
         th1.join();
