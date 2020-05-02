@@ -1,7 +1,7 @@
-package patterns.intro.ducks_simulator.ducks;
+package patterns.strategy.ducks_simulator.ducks;
 
-import patterns.intro.ducks_simulator.behavior.fly.FlyWithWings;
-import patterns.intro.ducks_simulator.behavior.quack.Quack;
+import patterns.strategy.ducks_simulator.behavior.fly.FlyWithWings;
+import patterns.strategy.ducks_simulator.behavior.quack.Quack;
 
 public class MallardDuck extends Duck {
 

@@ -1,7 +1,7 @@
-package patterns.intro.ducks_simulator.ducks;
+package patterns.strategy.ducks_simulator.ducks;
 
-import patterns.intro.ducks_simulator.behavior.fly.FlyBehavior;
-import patterns.intro.ducks_simulator.behavior.quack.QuackBehavior;
+import patterns.strategy.ducks_simulator.behavior.fly.FlyBehavior;
+import patterns.strategy.ducks_simulator.behavior.quack.QuackBehavior;
 
 public abstract class Duck {
     protected FlyBehavior flyBehavior;

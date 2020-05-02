@@ -1,4 +1,4 @@
-package patterns.intro.ducks_simulator.behavior.quack;
+package patterns.strategy.ducks_simulator.behavior.quack;
 
 public class Quack implements QuackBehavior {
     @Override

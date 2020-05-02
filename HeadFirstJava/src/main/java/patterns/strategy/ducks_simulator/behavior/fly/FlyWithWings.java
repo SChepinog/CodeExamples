@@ -1,4 +1,4 @@
-package patterns.intro.ducks_simulator.behavior.fly;
+package patterns.strategy.ducks_simulator.behavior.fly;
 
 public class FlyWithWings implements FlyBehavior {
     @Override

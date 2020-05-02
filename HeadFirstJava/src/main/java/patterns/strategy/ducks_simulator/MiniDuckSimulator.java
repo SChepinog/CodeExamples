@@ -1,9 +1,9 @@
-package patterns.intro.ducks_simulator;
+package patterns.strategy.ducks_simulator;
 
-import patterns.intro.ducks_simulator.behavior.fly.FlyRocketPowered;
-import patterns.intro.ducks_simulator.ducks.Duck;
-import patterns.intro.ducks_simulator.ducks.MallardDuck;
-import patterns.intro.ducks_simulator.ducks.ModelDuck;
+import patterns.strategy.ducks_simulator.behavior.fly.FlyRocketPowered;
+import patterns.strategy.ducks_simulator.ducks.Duck;
+import patterns.strategy.ducks_simulator.ducks.MallardDuck;
+import patterns.strategy.ducks_simulator.ducks.ModelDuck;
 
 public class MiniDuckSimulator {
     public static void main(String[] args) {
