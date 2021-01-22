@@ -1,11 +1,32 @@
 package summarise;
 
+import java.util.function.Consumer;
+
 public class SummarizeMain {
 
     public static void main(String[] args) throws InterruptedException {
         summarizeOneThreadStatic();
         summarizeOneThread();
         summarizeTwoThreads();
+        doSummWithLog(new Summator(0, Integer.MAX_VALUE), s -> s.setCounter(doSumm(s.getStart(), s.getEnd())),
+            "One thread static worked %s millis and got %s\n");
+        doSummWithLog(new Summator(0, Integer.MAX_VALUE), s -> {
+                Thread th = new Thread(s::summarize);
+                th.start();
+                try {
+                    th.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            },
+            "One thread worked %s millis and got %s\n");
+    }
+
+    private static void doSummWithLog(Summator summator, Consumer<Summator> consumer, String log) {
+        long startTime = System.currentTimeMillis();
+        consumer.accept(summator);
+        long workingTime = System.currentTimeMillis() - startTime;
+        System.out.printf(log, workingTime, summator.getCounter());
     }
 
     private static void summarizeOneThreadStatic() {
@@ -54,12 +75,30 @@ public class SummarizeMain {
         return counter;
     }
 
+    private static class Bounds {
+        int start;
+        int end;
+
+        public Bounds(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        public int getStart() {
+            return start;
+        }
+
+        public int getEnd() {
+            return end;
+        }
+    }
+
     private static class Summator {
-        private long start;
-        private long end;
+        private int start;
+        private int end;
         public long counter = 0;
 
-        Summator(long start, long end) {
+        Summator(int start, int end) {
             this.start = start;
             this.end = end;
         }
@@ -68,6 +107,33 @@ public class SummarizeMain {
             for (long i = start; i <= end; i++) {
                 counter += i;
             }
+        }
+
+        public int getStart() {
+            return start;
+        }
+
+        public Summator setStart(int start) {
+            this.start = start;
+            return this;
+        }
+
+        public int getEnd() {
+            return end;
+        }
+
+        public Summator setEnd(int end) {
+            this.end = end;
+            return this;
+        }
+
+        public long getCounter() {
+            return counter;
+        }
+
+        public Summator setCounter(long counter) {
+            this.counter = counter;
+            return this;
         }
     }
 }
