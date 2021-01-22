@@ -75,24 +75,6 @@ public class SummarizeMain {
         return counter;
     }
 
-    private static class Bounds {
-        int start;
-        int end;
-
-        public Bounds(int start, int end) {
-            this.start = start;
-            this.end = end;
-        }
-
-        public int getStart() {
-            return start;
-        }
-
-        public int getEnd() {
-            return end;
-        }
-    }
-
     private static class Summator {
         private int start;
         private int end;
