@@ -76,8 +76,8 @@ public class SummarizeMain {
     }
 
     private static class Summator {
-        private int start;
-        private int end;
+        private final int start;
+        private final int end;
         public long counter = 0;
 
         Summator(int start, int end) {
@@ -95,27 +95,16 @@ public class SummarizeMain {
             return start;
         }
 
-        public Summator setStart(int start) {
-            this.start = start;
-            return this;
-        }
-
         public int getEnd() {
             return end;
-        }
-
-        public Summator setEnd(int end) {
-            this.end = end;
-            return this;
         }
 
         public long getCounter() {
             return counter;
         }
 
-        public Summator setCounter(long counter) {
+        public void setCounter(long counter) {
             this.counter = counter;
-            return this;
         }
     }
 }
