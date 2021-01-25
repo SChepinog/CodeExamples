@@ -1,9 +1,9 @@
 package patterns.observer.javautil;
 
-import patterns.observer.custom.observers.DisplayElement;
-
 import java.util.Observable;
 import java.util.Observer;
+
+import patterns.observer.custom.observers.DisplayElement;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
@@ -26,7 +26,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.println(String.format("Current conditions are\nTemperature: %sF\nHumidity: %s percent\n---------------",
-                temperature, humidity));
+        System.out.printf("Current conditions are\nTemperature: %sF\nHumidity: %s percent\n---------------%n",
+            temperature, humidity);
     }
 }

@@ -4,7 +4,7 @@ public class ChicagoPizzaStore extends PizzaStore {
 
     @Override
     public Pizza createPizza(String pizzaName) {
-        Pizza pizza = null;
+        Pizza pizza;
         switch (pizzaName) {
             case "cheese":
                 pizza = new ChicagoCheesePizza();

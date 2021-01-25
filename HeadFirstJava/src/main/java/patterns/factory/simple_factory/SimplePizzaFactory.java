@@ -3,7 +3,7 @@ package patterns.factory.simple_factory;
 public class SimplePizzaFactory {
 
     public Pizza createPizza(String pizzaName) {
-        Pizza pizza = null;
+        Pizza pizza;
         switch (pizzaName) {
             case "cheese":
                 pizza = new CheesePizza();
