@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
 public class DateTimeTests {
 
     public static void main(String[] args) throws InterruptedException {
@@ -22,5 +24,10 @@ public class DateTimeTests {
 //        System.out.println(ZonedDateTime.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy h:mm a (z)")));
         System.out.println(ZonedDateTime.parse(testString, DateTimeFormatter.ofPattern("MM/dd/yyyy h:mm a (z)")).getSecond());
 
+        long days = DAYS.between(LocalDateTime.now(), LocalDateTime.now().minusDays(54));
+        System.out.println(days);
+
+        long daysPlus = DAYS.between(LocalDateTime.now().minusDays(54), LocalDateTime.now());
+        System.out.println(daysPlus);
     }
 }
