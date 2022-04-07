@@ -5,14 +5,15 @@ import java.util.List;
 
 public class BinarySearch {
 
-    List<String> strings;
+    private List<String> strings;
 
     public static void main(String[] args) {
         System.out.println("1".compareTo("11"));
 
         BinarySearch binarySearch = new BinarySearch();
-        binarySearch.strings = Arrays.asList("111", "222", "333", "444", "555", "666", "777", "888", "999");
-        String value = "1";
+        binarySearch.strings = Arrays.asList("111", "222");
+//        binarySearch.strings = Arrays.asList("111", "222", "333", "444", "555", "666", "777", "888", "999");
+        String value = "111";
         int index = binarySearch.getElementIndex(value);
         System.out.println(
             index < 0
@@ -21,7 +22,12 @@ public class BinarySearch {
         );
     }
 
-    private int getElementIndex(String value) {
+    public BinarySearch setStrings(List<String> strings) {
+        this.strings = strings;
+        return this;
+    }
+
+    public int getElementIndex(String value) {
         if (strings == null || strings.isEmpty()) {
             return -1;
         }
@@ -37,6 +43,9 @@ public class BinarySearch {
             } else {
                 return -1;
             }
+        }
+        if (right < left) {
+            return -1;
         }
         int middleIndex = (left + right) / 2;
         int compared = strings.get(middleIndex).compareTo(value);
