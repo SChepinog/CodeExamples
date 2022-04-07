@@ -1,8 +1,12 @@
 package sorting;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Objects;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import utils.ArrayListGenerator;
@@ -12,6 +16,13 @@ public class JoiningSorting {
     public static void main(String[] args) {
         ArrayList<Integer> arrayToSort = ArrayListGenerator.get();
         sort(arrayToSort);
+
+        LinkedList<String> linkedList = new LinkedList<>();
+        ArrayList<String> arrayList = new ArrayList<>();
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        HashSet<String> hashSet = new HashSet<>();
+        TreeSet<String> treeSet = new TreeSet<>();
+//        treeSet.
     }
 
     private static ArrayList<Integer> sort(ArrayList<Integer> arrayToSort) {
