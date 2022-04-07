@@ -17,7 +17,9 @@ public class BinarySearchTest {
             DynamicTest.dynamicTest("Test2", () -> doTest(1, Arrays.asList("0", "1", "2"), "1")),
             DynamicTest.dynamicTest("Test3", () -> doTest(-1, Arrays.asList("0", "1", "2"), "11")),
             DynamicTest.dynamicTest("Test4", () -> doTest(-1, Arrays.asList("000", "111"), "0")),
-            DynamicTest.dynamicTest("Test5", () -> doTest(-1, Arrays.asList("000", "111"), "0000"))
+            DynamicTest.dynamicTest("Test5", () -> doTest(-1, Arrays.asList("000", "111"), "0000")),
+            DynamicTest.dynamicTest("Test6", () -> doTest(-1, Arrays.asList("000", "111"), "1")),
+            DynamicTest.dynamicTest("Test7", () -> doTest(-1, Arrays.asList("000", "111"), "1111"))
         );
     }
 
