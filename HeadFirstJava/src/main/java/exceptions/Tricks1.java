@@ -6,7 +6,7 @@ public class Tricks1 {
 
     public static void main(String[] args) {
         try {
-            devideByZero();
+            divideByZero();
             System.out.println("try");
             return;
         } catch (Exception ex) {
@@ -17,7 +17,7 @@ public class Tricks1 {
         }
     }
 
-    public static void devideByZero() throws DateTimeException {
+    public static void divideByZero() throws DateTimeException {
         System.out.println(5 / 0);
     }
 }
